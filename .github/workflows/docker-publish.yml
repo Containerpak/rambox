@@ -50,7 +50,7 @@ jobs:
           provenance: mode=max
           sbom: true
       - name: Verify exports
-        run: docker run --rm ghcr.io/containerpak/rambox:main sh -c 'test -x /usr/bin/rambox && test -f /usr/share/applications/com.rambox.Rambox.desktop'
+        run: docker run --rm ghcr.io/containerpak/rambox:main sh -c 'test -x /usr/local/bin/rambox-cpak && test -f /usr/share/applications/com.rambox.Rambox.cpak.desktop && test ! -e /opt/Rambox/rambox'
 
       - uses: sigstore/cosign-installer@d7543c93d881b35a8faa02e8e3605f69b7a1ce62
 
