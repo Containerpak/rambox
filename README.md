@@ -11,5 +11,5 @@ cpak install github.com/containerpak/rambox
 Start Rambox from the application menu or run:
 
 ```bash
-cpak run github.com/containerpak/rambox rambox
+cpak run github.com/containerpak/rambox rambox-cpak
 ```

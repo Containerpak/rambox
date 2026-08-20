@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /opt/rambox/rambox --no-sandbox "$@"
+exec /opt/Rambox/rambox --no-sandbox "$@"

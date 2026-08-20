@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Rambox
+Comment=Workspace simplifier
+Exec=rambox-cpak %U
+Icon=rambox
+Terminal=false
+Type=Application
+StartupWMClass=rambox
+Categories=Network;
+MimeType=x-scheme-handler/rambox;
