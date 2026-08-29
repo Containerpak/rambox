@@ -52,6 +52,17 @@ jobs:
       - name: Verify exports
         run: docker run --rm ghcr.io/containerpak/rambox:main sh -c 'test -x /usr/local/bin/rambox-cpak && test -f /usr/share/applications/com.rambox.Rambox.cpak.desktop && test ! -e /opt/Rambox/rambox'
 
+      - name: Verify runtime adapter
+        run: |
+          source_url="$(jq -r '.runtime_sources[0].url' cpak.json)"
+          source_sha256="$(jq -r '.runtime_sources[0].sha256' cpak.json)"
+          curl -fsSL "$source_url" -o Rambox.deb
+          printf '%s  %s\n' "$source_sha256" Rambox.deb | sha256sum -c -
+          docker run --rm \
+            -v "$PWD/Rambox.deb:/tmp/Rambox.deb:ro" \
+            ghcr.io/containerpak/rambox:main \
+            sh -ec 'dpkg -i /tmp/Rambox.deb && ! dpkg --audit | grep . && test -x /opt/Rambox/rambox'
+
       - name: Pin published image
         env:
           IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
