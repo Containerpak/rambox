@@ -4,7 +4,7 @@
   "name": "Rambox",
   "description": "Workspace simplifier: keep your messaging and work apps in one window.",
   "version": "2.7.1",
-  "image": "ghcr.io/containerpak/rambox@sha256:1c89d25190a62e40e988ed777b75286cb0b5056b7751f8e759d18febd1da1346",
+  "image": "ghcr.io/containerpak/rambox@sha256:874ae9a40a548faca651b422cdb4747cb594e14c74a801f14207c06f67b4bb38",
   "runtime_sources": [
     {
       "name": "Rambox-2.7.1-linux-x64.deb",
